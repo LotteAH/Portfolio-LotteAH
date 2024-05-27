@@ -91,6 +91,44 @@ nav a:hover {
   z-index: 2;
 }
 
+.horisontal-line-left {
+  width: 500px; /* Set the width of the line */
+  height: 20px; /* Set the height of the line */
+  background-color: black; /* Set the background color to black */
+  margin-left: 40px; /* Adjust margin as needed */
+}
+
+.vertical-line-left {
+  width: 20px; /* Set the width of the line */
+  height: 500px; /* Set the height of the line */
+  background-color: black; /* Set the background color to black */
+  margin-left: 40px; /* Adjust margin as needed */
+}
+
+.horisontal-line-right {
+  position: absolute;
+  bottom: 0; /* Position the line at the bottom of the page */
+  right: 0; /* Align the line to the right */
+  width: 200px; /* Set the width of the line */
+  height: 20px; /* Set the height of the line */
+  background-color: black; /* Set the background color to black */
+  margin-right: 40px; /* Adjust margin as needed */
+}
+
+.vertical-line-right {
+  position: absolute;
+  top: 100px; /* Adjust the top position as needed */
+  right: 0; /* Align the line to the right */
+  width: 20px; /* Set the width of the line */
+  height: calc(100% - 100px); /* Set the height to cover the remaining height after leaving space for the footer */
+  background-color: black; /* Set the background color to black */
+  margin-right: 40px; /* Adjust margin as needed */
+}
+
+footer {
+  clear: both; /* Ensure that the footer clears both the horizontal and vertical lines */
+}
+
 .footer-info {
   padding: 40px;
   text-align: right; /* Right-align the content */
