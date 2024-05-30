@@ -43,7 +43,7 @@ main {
 h1 {
   font-family: 'Jost';
   font-size: 3em;
-  font-weight: 900;
+  font-weight: 600;
   text-transform: uppercase;
 }
 
@@ -204,7 +204,7 @@ footer {
 
 @media (min-width: 900px) {
   .logo {
-    font-size: 2em;
+    font-size: 3em;
   }
 
   .nav-container {
