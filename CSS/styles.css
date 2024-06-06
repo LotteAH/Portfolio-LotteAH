@@ -254,7 +254,54 @@ nav a:hover {
 .index-container .profile-picture {
   margin-top: 100px; /* Ensure no extra space above the "Portfolio" heading */
 }
+.work-card-container {
+  display: grid;
+  gap: 40px;
+  padding: 0 20px; /* Add padding to the container */
+  margin-top: 60px;
+  margin-left: 80px;
+  margin-right: 50px;
+  margin-bottom: 80px;
+  align-items: center;
+  align-content: center;
+}
 
+.work-card {
+  border: 5px solid black;
+  background-color: white;
+  width: 350px;
+  text-align: left;
+}
+
+.work-card img {
+  max-width: 100%;
+  height: auto;
+  border-bottom: 5px solid black;
+}
+
+.work-card-info {
+  margin-left: 40px;
+  margin-right: 20px;
+}
+
+.visit-site-button {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-family: 'Jost';
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.visit-site-button:hover {
+  background-color: #333;
+}
 footer {
   clear: both; /* Ensure that the footer clears both the horizontal and vertical lines */
 }
@@ -262,10 +309,39 @@ footer {
 .footer-info {
   padding-top: 20px;
   padding-right: 40px;
+  padding-left: 40px;
   padding-bottom: 40px;
   text-align: right; /* Right-align the content */
   font-family: 'Jost';
   font-weight: 400;
+}
+
+@media (max-width: 899px) {
+  .work-card-container {
+    grid-template-columns: 1fr; /* Single column layout */
+  }
+  
+  .horisontal-line-left {
+    width: 270px; /* Set the width of the line */
+  }
+  
+  .vertical-line-left {
+    height: 700px; /* Set the height of the line */
+  }
+  
+  .horisontal-line-right {
+    width: 270px; /* Set the width of the line */
+
+  }
+  
+  .vertical-line-right {
+    height: calc(100% - 100px); /* Set the height to cover the remaining height after leaving space for the footer */
+  }
+
+  .about-text {
+    font-size: 1.7em;
+  }
+  
 }
 
 @media (min-width: 900px) {
@@ -317,13 +393,25 @@ footer {
     min-width: 400px;
     margin-right: 20px; /* Space between the image and text */
     margin-bottom: 0; /* Remove bottom margin for larger screens */
+    margin-top: 80px;
+    margin-bottom:80px;
   }
 
   .contact-info {
     margin-left: 20px; /* Add left margin for better spacing */
+    margin-top: 80px;
+    margin-bottom: 80px;
   }
-}
-}
+
+  .work-card-container {
+    grid-template-columns: repeat(2, 1fr); /* Three columns layout */
+  }
+
+@media (min-width: 1300px) {
+  .work-card-container {
+    grid-template-columns: repeat(3, 1fr); /* Three columns layout */
+  }
+  }
 
 
 
