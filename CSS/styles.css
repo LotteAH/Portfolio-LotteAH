@@ -40,6 +40,10 @@ main {
   margin-right: 20px;
 }
 
+a {
+  color: black;
+}
+
 h1 {
   font-family: 'Jost';
   font-size: 3em;
