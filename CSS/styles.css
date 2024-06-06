@@ -43,9 +43,12 @@ main {
 h1 {
   font-family: 'Jost';
   font-size: 3em;
+  line-height: 1.2em;
   font-weight: 600;
   text-transform: uppercase;
+  margin-top: 60px;
 }
+
 h2{
   font-family: 'Jost';
   font-size: 1.8em;
@@ -79,13 +82,15 @@ h5{
   margin-top: 0px;
 }
 
+.titel{
+  margin-top: 60px;
+}
 .about-text {
   font-family: 'Jost';
   font-size: 2em;
   font-weight: 400;
   text-transform: uppercase;
   margin-top: 20px;
-  margin-bottom: 130px;
 }
 
 .nav-container {
@@ -106,6 +111,7 @@ nav {
   max-width: 300px;
   padding: 20px;
   border-radius: 10px;
+  margin-right:10px;
 }
 
 .current-page {
@@ -130,10 +136,10 @@ nav a:hover {
 .overlay {
   display: none;
   position: fixed;
-  top: 100px; /* Start overlay 100px from the top */
+  top: 72px; /* Start overlay 100px from the top */
   left: 0;
   width: 100%;
-  height: calc(100% - 100px); /* Adjust the height based on new start position */
+  height: calc(100% - 72px); /* Adjust the height based on new start position */
   background-color: black;
   opacity: 0.9;
   z-index: 1;
@@ -193,12 +199,18 @@ nav a:hover {
   margin-right: 40px; /* Adjust margin as needed */
 }
 
+.bottom-space {
+padding-bottom: 100px;
+}
+
 .profile-picture {
   margin-top: 60px;
   max-width: 200px; /* Adjust the width as needed */
   border-radius: 50%; /* This makes the image circular */
   border: 15px solid black; /* This adds a thick black border */
   object-fit: cover; /* Ensures the image covers the circle without distortion */
+  position: relative;
+  z-index: 0; /* Set a negative z-index value */
 }
 
 .about-container {
@@ -206,7 +218,7 @@ nav a:hover {
   flex-direction: column; /* Stack items vertically */
   padding: 0 20%; /* Add space on each side */
   margin-top: 60px; /* Adjust this value to move the section upwards */
-  margin-bottom: 60px;
+  margin-bottom: 0px;
   position: relative; /* Ensure the container is positioned relatively */
   z-index: 1; /* Ensure the content appears above the decorative lines */
 }
@@ -217,23 +229,33 @@ nav a:hover {
   align-items: center; /* Center items vertically */
   padding: 0 20%; /* Add space on each side */
   margin-top: 60px; /* Adjust this value to move the section upwards */
-  margin-bottom: 60px;
   position: relative; /* Ensure the container is positioned relatively */
-  z-index: 1; /* Ensure the content appears above the decorative lines */
+  z-index: 0; /* Ensure the content appears above the decorative lines */
 }
 
 .contact-picture {
   border-radius: 50%; /* This makes the image circular */
   border: 15px solid black; /* This adds a thick black border */
   object-fit: cover;
-  width: 35%; /* Limit the profile picture width */
+  width: 80%; /* Limit the profile picture width */
   margin-bottom: 20px; /* Space below the image for smaller screens */
+  margin-top:60px;
+  align-items: center;
+  align-content: center;
+  position: relative;
+  z-index: 1; /* Set a negative z-index value */
 }
 
 .contact-container h1, .contact-container h2 {
   margin: 0; /* Remove any default margins */
 }
-
+.projects-container {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  padding-left: 150px; /* Add space on each side */
+  position: relative; /* Ensure the container is positioned relatively */
+  z-index: 0; /* Ensure the content appears above the decorative lines */
+}
 .index-container {
   display: flex;
   flex-direction: column; /* Stack items vertically */
@@ -242,7 +264,7 @@ nav a:hover {
   padding: 0 20%; /* Add space on each side */
   margin-top: 60px; /* Adjust this value to move the section upwards */
   position: relative; /* Ensure the container is positioned relatively */
-  z-index: 1; /* Ensure the content appears above the decorative lines */
+  z-index: 0; /* Ensure the content appears above the decorative lines */
 }
 
 .index-container h1,
@@ -256,11 +278,7 @@ nav a:hover {
 }
 .work-card-container {
   display: grid;
-  gap: 40px;
-  padding: 0 20px; /* Add padding to the container */
-  margin-top: 60px;
-  margin-left: 80px;
-  margin-right: 50px;
+  gap: 20px;
   margin-bottom: 80px;
   align-items: center;
   align-content: center;
@@ -269,8 +287,9 @@ nav a:hover {
 .work-card {
   border: 5px solid black;
   background-color: white;
-  width: 350px;
+  width: 80%;
   text-align: left;
+  gap; 0px;
 }
 
 .work-card img {
@@ -317,6 +336,12 @@ footer {
 }
 
 @media (max-width: 899px) {
+  .projects-container {
+    padding-left: 100px; /* Add space on each side */
+  }
+  .work-card{
+    width: 80%;
+  }
   .work-card-container {
     grid-template-columns: 1fr; /* Single column layout */
   }
@@ -346,7 +371,7 @@ footer {
 
 @media (min-width: 900px) {
   .logo {
-    font-size: 3em;
+    font-size: 2em;
   }
 
   .nav-container {
@@ -368,7 +393,7 @@ footer {
     padding: 0; /* Reset padding */
     flex-direction: row; /* Display navigation items in a row */
     margin-left: auto; /* Push the navigation items to the right */
-    margin-right: 40px; /* Limit the right margin to 40px */
+    margin-right: 50px; /* Limit the right margin to 40px */
   }
 
   .hamburger {
@@ -384,13 +409,13 @@ footer {
 
   .contact-container {
     display: grid; /* Use grid layout for larger screens */
-    grid-template-columns: 1fr 2fr; /* Two columns: 1/3 for image, 2/3 for text */
+    grid-template-columns: 1fr 1fr; /* Two columns: 1/3 for image, 2/3 for text */
     align-items: center; /* Center items vertically */
     padding: 0 20%; /* Add space on each side */
   }
 
   .contact-picture {
-    min-width: 400px;
+    min-width: 80%;
     margin-right: 20px; /* Space between the image and text */
     margin-bottom: 0; /* Remove bottom margin for larger screens */
     margin-top: 80px;
@@ -405,76 +430,14 @@ footer {
 
   .work-card-container {
     grid-template-columns: repeat(2, 1fr); /* Three columns layout */
+    grid-row-gap: 20px;
   }
 
 @media (min-width: 1300px) {
+  .logo {
+    font-size: 3em;
+  }
   .work-card-container {
     grid-template-columns: repeat(3, 1fr); /* Three columns layout */
   }
   }
-
-
-
-/* body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f9f9f9;
-}
-.container {
-  text-align: center;
-  background: white;
-  border: 5px solid black;
-  padding: 20px;
-  max-width: 800px;
-  width: 100%;
-}
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 50px;
-}
-.header h1 {
-  margin: 0;
-}
-.nav {
-  display: flex;
-  gap: 20px;
-}
-.nav a {
-  text-decoration: none;
-  color: black;
-  font-weight: bold;
-}
-.profile-image {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin: 0 auto 20px;
-}
-.profile-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.services {
-  font-size: 1.2em;
-  margin-bottom: 20px;
-}
-.footer {
-  margin-top: 20px;
-  font-size: 0.9em;
-}
-.footer div {
-  margin: 5px 0;
-}
-.footer a {
-  text-decoration: none;
-  color: black;
-} */
